@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "build": "rimraf build && tsc --outDir build src/index.ts",
+    "start": "npm run build && node build/index.js"
   },
   "author": "alexissense",
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.3.1"
+  },
+  "dependencies": {
+    "rimraf": "^2.6.3"
   }
 }
