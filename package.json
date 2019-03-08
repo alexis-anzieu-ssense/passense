@@ -1,0 +1,15 @@
+{
+  "name": "passense",
+  "version": "1.0.0",
+  "description": "SOLID password",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "alexissense",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.3.1"
+  }
+}
