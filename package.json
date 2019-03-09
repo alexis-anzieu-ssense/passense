@@ -5,8 +5,9 @@
   "main": "build/index.js",
   "repository": "alexissense/passense",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf build && tsc --outDir build src/index.ts",
+    "test": "jest --config ./jest.config.json",
+    "check-types": "tsc",
+    "build": "rimraf build && tsc -p tsconfig.json",
     "start": "npm run build && node build/index.js"
   },
   "author": "alexissense",
@@ -20,5 +21,9 @@
     "npm",
     "package",
     "password"
-  ]
+  ],
+  "dependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "^24.0.11"
+  }
 }
