@@ -2,7 +2,7 @@
   "name": "@alexisanzieu/passense",
   "version": "2.0.0",
   "description": "SOLID password to ensure robust security",
-  "main": "index.js",
+  "main": "build/index.js",
   "repository": "alexissense/passense",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,9 +12,7 @@
   "author": "alexissense",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^24.3.1"
-  },
-  "dependencies": {
+    "jest": "^24.3.1",
     "rimraf": "^2.6.3"
   },
   "keywords": [
