@@ -1,8 +1,9 @@
 {
-  "name": "passense",
+  "name": "@alexisanzieu/passense",
   "version": "1.0.0",
-  "description": "SOLID password",
+  "description": "SOLID password to ensure robust security",
   "main": "index.js",
+  "repository": "alexissense/passense",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf build && tsc --outDir build src/index.ts",
@@ -15,5 +16,11 @@
   },
   "dependencies": {
     "rimraf": "^2.6.3"
-  }
+  },
+  "keywords": [
+    "SOLID",
+    "npm",
+    "package",
+    "password"
+  ]
 }
