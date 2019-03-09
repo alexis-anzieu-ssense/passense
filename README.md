@@ -14,10 +14,12 @@ $ npm install @alexisanzieu/passense
 ```js
 const passense = require("@alexisanzieu/passense");
 
+//You need to pass a string value inside the function
+
 passense("this is a valid password");
 //=>true
 
-passense(1337);
+passense("4344");
 //=> Uncaught Error: The min lenght is 7 characters
 //    at passense (<anonymous>:2:41)
 //    at <anonymous>:1:1
