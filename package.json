@@ -2,13 +2,13 @@
   "name": "@alexisanzieu/passense",
   "version": "2.5.0",
   "description": "SOLID password to ensure robust security",
-  "main": "build/index.js",
+  "main": "lib/index.js",
   "repository": "alexissense/passense",
   "scripts": {
     "test": "jest --config ./jest.config.json",
     "check-types": "tsc",
-    "build": "rimraf build && tsc -p tsconfig.json",
-    "start": "npm run build && node build/index.js"
+    "build": "rimraf lib && tsc -p tsconfig.json",
+    "start": "npm run lib && node lib/index.js"
   },
   "author": "alexissense",
   "license": "ISC",

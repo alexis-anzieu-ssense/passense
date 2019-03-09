@@ -21,5 +21,5 @@ passense("this is a valid password");
 
 passense("4344");
 //=>Error: The min lenght is 7 characters
-//     at passense (C:\Users\alexi\Documents\Dev\local\test\node_modules\@alexisanzieu\passense\build\index.js:3:15)
+//     at passense (C:\Users\alexi\Documents\Dev\local\test\node_modules\@alexisanzieu\passense\lib\index.js:3:15)
 ```
