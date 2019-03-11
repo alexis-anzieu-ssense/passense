@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": "alexissense/passense",
   "scripts": {
-    "test": "jest --config ./jest.config.json",
+    "test": "jest --coverage --config ./jest.config.json",
     "check-types": "tsc",
     "build": "rimraf lib && tsc -p tsconfig.json",
     "start": "npm run lib && node lib/index.js"
