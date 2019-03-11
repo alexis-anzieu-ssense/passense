@@ -2,6 +2,7 @@
 
 ![npm (scoped)](https://img.shields.io/npm/v/@alexisanzieu/passense.svg)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@alexisanzieu/passense.svg)
+![SonarQube coverage](https://img.shields.io/sonar/http/sonarcloud.io/alexissense_passense/coverage.svg)
 
 ## Install
 
