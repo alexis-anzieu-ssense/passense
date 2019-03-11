@@ -13,8 +13,11 @@
   "author": "alexissense",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "jest": "^24.3.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
   },
   "keywords": [
     "SOLID",
@@ -23,7 +26,6 @@
     "password"
   ],
   "dependencies": {
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.11"
+    "@babel/preset-typescript": "^7.3.3"
   }
 }

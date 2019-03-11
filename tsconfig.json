@@ -8,5 +8,8 @@
         "forceConsistentCasingInFileNames": true,
         "noUnusedLocals": true,
         "alwaysStrict": true,
-    }
+    },
+    "exclude": [
+        "**/*.spec.ts"
+    ]
 }

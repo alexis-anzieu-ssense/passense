@@ -1,5 +1,6 @@
-module.exports = function passense(password: string) {
-    if (typeof password != 'string') throw new Error("Type entered is not correct");
-    if (password.length < 7) throw new Error("The min lenght is 7 characters");
-    return true;
+import LengthValidator from './validators/LengthValidator'
+import TypeValidator from './validators/TypeValidator'
+
+export default function validatePassword(password: any) {
+    return TypeValidator.isValid(password) && LengthValidator.isValid(password);
 };
