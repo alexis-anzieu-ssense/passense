@@ -1,4 +1,4 @@
-import validatePassword from '../src/index';
+import { validatePassword } from '../src/index';
 
 describe('Password typed by user', () => {
 
