@@ -1,6 +1,17 @@
 import LengthValidator from './validators/LengthValidator'
-import TypeValidator from './validators/TypeValidator'
+import UpperCaseValidator from './validators/UpperCaseValidator'
 
 export function validatePassword(password: any) {
-    return TypeValidator.isValid(password) && LengthValidator.isValid(password);
+
+    let upperCaseValidator = new UpperCaseValidator({
+        minNumber: 1
+    });
+
+
+    let lengthValidator = new LengthValidator({
+        minLenght: 7
+    });
+
+    return upperCaseValidator.validate(password) && lengthValidator.validate(password);
+
 }
