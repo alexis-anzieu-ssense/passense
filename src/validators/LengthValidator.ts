@@ -13,7 +13,7 @@ export default class LengthValidator extends Validator {
 
     constructor(config?: config) {
         super();
-        this.minimum = config && config.minimum ? config.minimum : defaultConfig.minimum;
+        this.minimum = config && this.configTypeValidation(config.minimum, 'number') ? config.minimum : defaultConfig.minimum;
     }
 
     public isValid(password: string): boolean {

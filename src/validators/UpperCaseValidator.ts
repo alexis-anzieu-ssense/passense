@@ -16,7 +16,7 @@ export default class UpperCaseValidator extends Validator {
 
     constructor(config?: config) {
         super();
-        this.minimum = config && config.minimum ? config.minimum : defaultConfig.minimum;
+        this.minimum = config && this.configTypeValidation(config.minimum, 'number') ? config.minimum : defaultConfig.minimum;
         this.iteration = defaultConfig.iteration;
     }
 
@@ -38,4 +38,5 @@ export default class UpperCaseValidator extends Validator {
         // number and unexpected characters are not allowed
         return s === s.toUpperCase() && s != s.toLowerCase();
     }
+
 }
