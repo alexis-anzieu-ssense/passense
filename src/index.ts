@@ -1,16 +1,15 @@
-import LengthValidator from './validators/LengthValidator'
-import UpperCaseValidator from './validators/UpperCaseValidator'
+import LengthValidator from "./validators/LengthValidator";
+import UpperCaseValidator from './validators/UpperCaseValidator';
 
-export function validatePassword(password: any) {
+interface config {
+    upperCase?: { minimum: number };
+    length?: { minimum: number };
+}
 
-    let upperCaseValidator = new UpperCaseValidator({
-        minNumber: 1
-    });
+export function validatePassword(password: any, config?: config) {
 
-
-    let lengthValidator = new LengthValidator({
-        minLenght: 7
-    });
+    const upperCaseValidator = new UpperCaseValidator(config && config.upperCase ? config.upperCase : undefined);
+    const lengthValidator = new LengthValidator(config && config.length ? config.length : undefined);
 
     return upperCaseValidator.validate(password) && lengthValidator.validate(password);
 

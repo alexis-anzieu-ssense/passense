@@ -1,20 +1,23 @@
-import { Validator } from "./Validator";
+import { Validator } from './Validator';
+
+export const defaultConfig = {
+    minimum: 7
+}
 
 interface config {
-    minLenght: number;
+    minimum?: number;
 }
 
 export default class LengthValidator extends Validator {
-    private minLenght: number;
+    private minimum: number;
 
-
-    constructor(config: config) {
+    constructor(config?: config) {
         super();
-        this.minLenght = config.minLenght;
+        this.minimum = config && config.minimum ? config.minimum : defaultConfig.minimum;
     }
 
     public isValid(password: string): boolean {
-        if (password.length < this.minLenght) throw new Error("The min lenght is 7 characters");
-        return true
+        if (password.length < this.minimum) { throw new Error(`The min lenght is ${this.minimum} characters`); }
+        return true;
     }
 }

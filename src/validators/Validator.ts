@@ -1,4 +1,4 @@
-import TypeValidator from "./TypeValidator";
+import TypeValidator from './TypeValidator';
 
 export abstract class Validator {
 

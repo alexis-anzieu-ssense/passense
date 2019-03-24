@@ -1,29 +1,34 @@
-import { Validator } from "./Validator";
+import { Validator } from './Validator';
+
+const defaultConfig = {
+    minimum: 1,
+    iteration: 0,
+}
 
 interface config {
-    minNumber: number;
+    minimum?: number;
 }
 
 export default class UpperCaseValidator extends Validator {
 
-    private minNumber: number;
+    private minimum: number;
     private iteration: number;
 
-    constructor(config: config) {
+    constructor(config?: config) {
         super();
-        this.minNumber = config.minNumber;
-        this.iteration = 0;
+        this.minimum = config && config.minimum ? config.minimum : defaultConfig.minimum;
+        this.iteration = defaultConfig.iteration;
     }
 
     public isValid(password: string): boolean {
-        if (!this.isStringUpperCased(password)) throw new Error("You must to include one uppercase letter");
-        return true
+        if (!this.isStringUpperCased(password)) { throw new Error(`You must to include at least ${this.minimum} uppercase letter`); }
+        return true;
     }
 
     private isStringUpperCased(s: string): boolean {
         for (let i = 0; i < s.length; i++) {
             if (this.isCharUpperCase(s[i])) {
-                if (++this.iteration === this.minNumber) return true
+                if (++this.iteration === this.minimum) { return true; }
             }
         }
         return false;
