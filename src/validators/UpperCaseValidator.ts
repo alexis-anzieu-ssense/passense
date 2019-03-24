@@ -16,8 +16,9 @@ export default class UpperCaseValidator extends Validator {
 
     constructor(config?: config) {
         super();
-        this.minimum = config && this.configTypeValidation(config.minimum, 'number') ? config.minimum : defaultConfig.minimum;
-        this.iteration = defaultConfig.iteration;
+        const mergedConfig = this.mergeConfig(config, defaultConfig);
+        this.minimum = this.ensureTyping(mergedConfig.minimum, 'number');
+        this.iteration = this.ensureTyping(mergedConfig.iteration, 'number');
     }
 
     public isValid(password: string): boolean {

@@ -13,7 +13,7 @@ describe('Password typed by user with default config', () => {
 
     });
 
-    test('show throw a type error input when type a number', () => {
+    test('should throw a type error input when type a number', () => {
         expect(() => {
             validatePassword(42);
         }).toThrowError(new Error("Type entered is not correct"));
@@ -31,7 +31,7 @@ describe('Password typed by user with default config', () => {
 
 describe('Password typed by user with full custom config', () => {
 
-    const customConfig = {
+    let customConfig = {
         upperCase: {
             minimum: 2
         },
@@ -50,7 +50,7 @@ describe('Password typed by user with full custom config', () => {
 
     });
 
-    test('show throw a type error input when type a number', () => {
+    test('should throw a type error input when type a number', () => {
         expect(() => {
             validatePassword(42, customConfig);
         }).toThrowError(new Error("Type entered is not correct"));
@@ -83,7 +83,7 @@ describe('Password typed by user with upperCaseConfig only', () => {
 
     });
 
-    test('show throw a type error input when type a number', () => {
+    test('should throw a type error input when type a number', () => {
         expect(() => {
             validatePassword(42, customConfig);
         }).toThrowError(new Error("Type entered is not correct"));
@@ -116,7 +116,7 @@ describe('Password typed by user with lenghtConfig only', () => {
 
     });
 
-    test('show throw a type error input when type a number', () => {
+    test('should throw a type error input when type a number', () => {
         expect(() => {
             validatePassword(42, customConfig);
         }).toThrowError(new Error("Type entered is not correct"));
@@ -130,3 +130,38 @@ describe('Password typed by user with lenghtConfig only', () => {
 
     });
 })
+
+
+describe('Wrong type in config', () => {
+
+    let customConfig = {
+        upperCase: {
+            minimum: 'test'
+        },
+        length: {
+            minimum: 'test'
+        }
+    }
+    test('should be ok when type a correct password', () => {
+        expect(() => {
+            validatePassword("wrong passw-4'ord", customConfig);
+        }).toThrowError(new Error("Invalid type for test : string. Expected number"));
+    });
+});
+
+describe('Wrong attribute in config', () => {
+
+    let customConfig = {
+        upperCase: {
+            minimun: 2
+        },
+        length: {
+            minimum: 7
+        }
+    }
+    test('should be ok when type a correct password', () => {
+        expect(() => {
+            validatePassword("wrong passw-4'ord", customConfig);
+        }).toThrowError(new Error("Invalid attribute 'minimun' not available on this config"));
+    });
+});

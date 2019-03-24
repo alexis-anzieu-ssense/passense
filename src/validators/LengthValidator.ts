@@ -1,6 +1,6 @@
 import { Validator } from './Validator';
 
-export const defaultConfig = {
+const defaultConfig = {
     minimum: 7
 }
 
@@ -13,7 +13,9 @@ export default class LengthValidator extends Validator {
 
     constructor(config?: config) {
         super();
-        this.minimum = config && this.configTypeValidation(config.minimum, 'number') ? config.minimum : defaultConfig.minimum;
+        const mergedConfig = this.mergeConfig(config, defaultConfig);
+        this.minimum = this.ensureTyping(mergedConfig.minimum, 'number');
+
     }
 
     public isValid(password: string): boolean {

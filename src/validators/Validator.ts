@@ -6,12 +6,21 @@ export abstract class Validator {
         return TypeValidator.isValid(password) && this.isValid(password);
     }
 
-    protected configTypeValidation(variable: any, type: string) {
+    protected mergeConfig(config: any, defaultConfig: any) {
+        for (let attr in config) {
+            if (!defaultConfig.hasOwnProperty(attr)) {
+                throw new Error(`Invalid attribute '${attr}' not available on this config`);
+            }
+        }
+        return { ...defaultConfig, ...config, }
+    }
+
+    protected ensureTyping(variable: any, type: string) {
         const typeOfVariable = typeof variable;
-        if (variable && typeOfVariable !== type) {
+        if (typeOfVariable !== type) {
             throw new Error(`Invalid type for ${variable} : ${typeOfVariable}. Expected ${type}`);
         }
-        return true
+        return variable
     }
 
     public abstract isValid(password: string): boolean;
