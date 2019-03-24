@@ -8,7 +8,7 @@ export abstract class Validator {
 
     protected configTypeValidation(variable: any, type: string) {
         const typeOfVariable = typeof variable;
-        if (variable != undefined && typeOfVariable !== type) {
+        if (variable && typeOfVariable !== type) {
             throw new Error(`Invalid type for ${variable} : ${typeOfVariable}. Expected ${type}`);
         }
         return true
