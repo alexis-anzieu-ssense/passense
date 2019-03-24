@@ -1,6 +1,6 @@
 {
   "name": "@alexisanzieu/passense",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "description": "SOLID password to ensure robust security",
   "main": "lib/index.js",
   "repository": "alexissense/passense",
