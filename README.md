@@ -31,7 +31,7 @@ passense.validatePassword("4344");
 
 Default configuration :
 
-```json
+```js
  {
     upperCase: {
         minimum: 1
