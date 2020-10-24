@@ -14,6 +14,7 @@ export default class UpperCaseValidator extends Validator {
     private minimum: number;
     private iteration: number;
 
+    //commentaire null
     constructor(config?: config) {
         super();
         const mergedConfig = this.mergeConfig(config, defaultConfig);
